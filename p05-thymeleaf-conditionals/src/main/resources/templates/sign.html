@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Traffic Sign</title>
+</head>
+
+<body>
+    <p th:text="'Speed: ' + ${speed}"></p>
+    <img th:if="${speed < 60}" src="images/speed-limit.png" alt="limit" width="200">
+    </img>
+    <img th:unless="${speed < 60}" src="images/slow-down.png" alt="limit" width="200">
+    </img>
+
+    <p th:text="'Speed: ' + ${speed}"></p>
+    <img th:src="${speed < 60} ? 'images/speed-limit.png' : 'images/slow-down.png'" alt="mix" width="200">
+    </img>
+</body>
+
+</html>
